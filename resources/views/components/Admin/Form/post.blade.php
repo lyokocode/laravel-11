@@ -1,9 +1,9 @@
 <div class=" w-1/3 mx-auto text-center">
 
-    {{-- session messages --}}
+
     @if (session('success'))
-        <div>
-            <p>{{ session('success') }}</p>
+        <div class="mb-2">
+            <x-admin.flashMsg msg="{{ session('success') }}" />
         </div>
     @endif
 
@@ -29,9 +29,9 @@
         </div>
 
 
-        @error('failed')
+        {{-- @error('failed')
             <p class="text-sm text-red-500">{{ $message }}</p>
-        @enderror
+        @enderror --}}
 
         <button class="bg-sky-500 text-sky-100 font-semibold text-xl px-2 py-1 rounded-md">oluştur</button>
     </form>
