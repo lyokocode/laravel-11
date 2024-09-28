@@ -17,7 +17,7 @@
         {{-- wrapper --}}
         <div class="text-center bg-gray-200 w-1/3 min-w-80 max-w-xl rounded-md p-3">
             <h1 class="text-3xl font-bold text-gray-700">/AELITA</h1>
-            <h2 class="my-2 text-lg font-medium text-gray-600">Yeni bir hesap oluştur.</h2>
+            <h2 class="my-2 text-lg font-medium text-gray-600">Giriş Yap.</h2>
 
             <form action="{{ route('login') }}" method="post" class="text-center flex flex-col items-center gap-y-2">
 
@@ -55,7 +55,7 @@
                 {{-- route to login page --}}
                 <div class="self-end text-end">
                     <h3>henüz bir hesabın yok mu?</h3>
-                    <a href="{{ route('login') }}" class='text-blue-600'>kayıt ol</a>
+                    <a href="{{ route('register') }}" class='text-blue-600'>kayıt ol</a>
                 </div>
             </form>
 
