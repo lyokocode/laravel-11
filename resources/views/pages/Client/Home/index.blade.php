@@ -1,3 +1,9 @@
 <x-client.layout>
-    hello form home page
+    @auth
+        <h1>Merhaba, giriş yapmış bir kullanıcısınız</h1>
+    @endauth
+
+    @guest
+        <h1>Merhaba, henüz giriş yapmadınız</h1>
+    @endguest
 </x-client.layout>
