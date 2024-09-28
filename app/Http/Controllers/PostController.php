@@ -5,15 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use App\Helpers\LinkHelper; 
+use App\Helpers\DateHelper; 
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('pages/Client/Explore.index');
+        $posts = Post::latest()->get();
+
+        // Her bir post için link verilerini al
+        foreach ($posts as $post) {
+            $post->linkData = LinkHelper::fetchLinkData($post->body); // body alanını link olarak varsayıyoruz
+            $post->created_at_formatted = DateHelper::timeAgo($post->created_at); // Tarihi formatla
+        }
+
+        return view('pages/Client/Explore.index', ['posts' => $posts ]);
     }
 
     /**

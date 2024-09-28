@@ -34,7 +34,7 @@ Route::get('/kesfet', [PostController::class, 'index'])->name('explore');
 
 Route::view('/projeler','pages/Client/Projects.index')->name('projects');
 
-Route::view('/soru-cevap','pages/Client/Explore.index')->name('topic');
+Route::view('/soru-cevap','pages/Client/Topic.index')->name('topic');
 
 Route::resource('posts', PostController::class);
 
