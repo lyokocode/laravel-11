@@ -39,7 +39,14 @@ Route::view('/soru-cevap','pages/Client/Topic.index')->name('topic');
 Route::resource('posts', PostController::class);
 
 
+Route::view('/admin-post','pages/Admin.post')->name('adminpost');
 
 
 
+Route::prefix('admin')->group(function () {
+    Route::view('/home','pages/Admin.home')->name('admin-home');
+    Route::view('/posts','pages/Admin.posts')->name('admin-posts');
+    Route::view('/blogs','pages/Admin.blogs')->name('admin-blogs');
+    Route::view('/projects','pages/Admin.projects')->name('admin-projects');
 
+});

@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::latest()->paginate(6);
+        $posts = Post::latest()->paginate(1);
 
         // Her bir post için link verilerini al
         foreach ($posts as $post) {
