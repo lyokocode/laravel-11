@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 
 
 Route::middleware('auth')->group(function(){
@@ -45,7 +46,8 @@ Route::view('/admin-post','pages/Admin.post')->name('adminpost');
 Route::middleware('auth')->group(function(){
     Route::prefix('admin')->group(function () {
         Route::view('/home','pages/Admin.home')->name('admin-home');
-        Route::view('/posts','pages/Admin.posts')->name('admin-posts');
+        // Route::view('/posts','pages/Admin.posts')->name('admin-posts');
+        Route::get('/posts',[AdminController::class,'post'])->name('admin-posts');
         Route::view('/blogs','pages/Admin.blogs')->name('admin-blogs');
         Route::view('/projects','pages/Admin.projects')->name('admin-projects');
     
