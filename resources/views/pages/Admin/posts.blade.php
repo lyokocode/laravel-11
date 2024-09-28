@@ -1,3 +1,3 @@
 <x-admin.layout>
-    admin panel posts page
+    <x-admin.form.post />
 </x-admin.layout>
