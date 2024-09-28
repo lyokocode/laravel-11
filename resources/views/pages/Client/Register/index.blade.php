@@ -19,7 +19,11 @@
             <h1 class="text-3xl font-bold text-gray-700">/AELITA</h1>
             <h2 class="my-2 text-lg font-medium text-gray-600">Yeni bir hesap oluştur.</h2>
 
-            <form action="" class="text-center flex flex-col items-center gap-y-2">
+            <form action="{{ route('register') }}" method="post"
+                class="text-center flex flex-col items-center gap-y-2">
+
+                @csrf
+
                 {{-- username --}}
                 <div class="flex flex-col w-2/3 items-start ">
                     <label for="username" class="text-md font-semibold text-gray-600">Kullanıcı adı:</label>
