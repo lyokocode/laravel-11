@@ -47,6 +47,9 @@
                     <label>Beni Hatırla</label>
                 </div>
 
+                @error('failed')
+                    <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
                 <button class="bg-sky-500 text-sky-100 font-semibold text-xl px-2 py-1 rounded-md">giriş yap</button>
 
                 {{-- route to login page --}}

@@ -19,3 +19,4 @@ Route::view('/kayit-ol','pages/Client/Register.index')->name('register');
 
 
 Route::post('/kayit-ol', [AuthController::class, 'register']);
+Route::post('/giris-yap', [AuthController::class, 'login']);
