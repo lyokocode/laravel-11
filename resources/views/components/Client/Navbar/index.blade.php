@@ -8,7 +8,6 @@
     <input type="text" placeholder="Ara..."
         class="w-1/2 bg-gray-200 h-8 pl-4 rounded-lg font-medium text-gray-600 placeholder:text-gray-500 hidden sm:block">
 
-
     <div>
         @auth
             <div class="relative grid place-items-center" x-data="{ open: false }" @click.outside="open=false">
@@ -19,7 +18,7 @@
 
                 {{-- dropdown menu --}}
                 <div x-show="open"
-                    class="bg-gray-200 shadow-xl absolute top-10 right-4 rounded-lg font-light p-3 overflow-hidden">
+                    class="bg-gray-200 shadow-xl absolute top-10 right-4 rounded-lg font-light p-2 overflow-hidden w-40">
                     <p class=" border-b border-zinc-300">{{ auth()->user()->username }}</p>
                     <a href="{{ route('profile') }}" class="block hover:bg-gray-300 p-1 my-2 max-w-max">Profilim</a>
 
@@ -34,6 +33,7 @@
         @endauth
 
     </div>
+
     @guest
         <a href="{{ route('login') }}" class="bg-gray-400 rounded-lg px-3 py-2 font-semibold text-gray-700">giriş yap</a>
     @endguest
