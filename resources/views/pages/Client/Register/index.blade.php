@@ -27,29 +27,38 @@
                 {{-- username --}}
                 <div class="flex flex-col w-2/3 items-start ">
                     <label for="username" class="text-md font-semibold text-gray-600">Kullanıcı adı:</label>
-                    <input type="text" name="username"
-                        class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1">
+                    <input type="text" name="username" value="{{ old('username') }}"
+                        placeholder="@error('username') {{ $message }} @enderror"
+                        class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1 placeholder:text-red-500 placeholder:text-sm placeholder:text-left placeholder:font-light
+                        placeholder:pl-0 text-left @error('username') border border-red-500 @enderror">
                 </div>
 
                 {{-- email --}}
                 <div class="flex flex-col w-2/3 items-start ">
                     <label for="email" class="text-md font-semibold text-gray-600">Email:</label>
-                    <input type="text" name="email" class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1">
+                    <input type="text" name="email" value="{{ old('email') }}"
+                        placeholder="@error('email') {{ $message }} @enderror"
+                        class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1 placeholder:text-red-500 placeholder:text-sm placeholder:text-left placeholder:font-light
+                        placeholder:pl-0 text-left @error('email') border border-red-500 @enderror">
                 </div>
 
                 {{-- password --}}
                 <div class="flex flex-col w-2/3 items-start ">
                     <label for="password" class="text-md font-semibold text-gray-600">Şifre:</label>
                     <input type="password" name="password"
-                        class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1">
+                        placeholder="@error('password') {{ $message }} @enderror"
+                        class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1 placeholder:text-red-500 placeholder:text-sm placeholder:text-left placeholder:font-light
+                        placeholder:pl-0 text-left @error('password') border border-red-500 @enderror">
                 </div>
 
                 {{-- confirmed password --}}
                 <div class="flex flex-col w-2/3 items-start ">
                     <label for="password_confirmation"
                         class="text-md font-semibold text-gray-600">Şifre(tekrar):</label>
-                    <input type="text" name="password_confirmation"
-                        class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1">
+                    <input type="password" name="password_confirmation"
+                        placeholder="@error('password') {{ $message }} @enderror"
+                        class="w-full rounded-md pl-3 font-semibold text-gray-700 p-1 placeholder:text-red-500 placeholder:text-sm placeholder:text-left placeholder:font-light
+                        placeholder:pl-0 text-left @error('password') border border-red-500 @enderror">
                 </div>
                 <button class="bg-sky-500 text-sky-100 font-semibold text-xl px-2 py-1 rounded-md">kayıt ol</button>
 
